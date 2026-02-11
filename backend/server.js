@@ -10,9 +10,7 @@ const error=require('./middleware/error.js')
 app.use(express.json());     
 app.use(cookieParser());      
 
-app.use('/',(req,res)=>{
-  res.send("hlo")
-})
+
 env.config({path:'./config/.env'})
 connectDB()
 
