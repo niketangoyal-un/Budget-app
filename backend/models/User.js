@@ -1,4 +1,5 @@
-const mongoose=require('mongoose')
+const mongoose=require('mongoose')//common js
+// import mongoose from("mongoose")// module es6
 const bcrypt=require("bcrypt")
 const userSchema = new mongoose.Schema(
   {
@@ -32,6 +33,8 @@ userSchema.pre("save", async function() {
   this.password=pass;
   
 });
+
+
 
 userSchema.methods.comparePassword = function (password) {
 

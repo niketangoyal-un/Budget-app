@@ -10,7 +10,9 @@ const error=require('./middleware/error.js')
 app.use(express.json());     
 app.use(cookieParser());      
 
-
+app.use('/',(req,res)=>{
+  res.send("hlo")
+})
 env.config({path:'./config/.env'})
 connectDB()
 
@@ -22,6 +24,10 @@ app.get("/api/profile", auth, (req, res) => {
 app.use('/api/users',users);
 
 app.use(error);
+
+app.get('/' , (req,res) => {
+  res.send("Server is up and running");
+})
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
