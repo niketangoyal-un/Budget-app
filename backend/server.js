@@ -24,6 +24,8 @@ app.use('/api/users',users);
 app.use(error);
 
 app.get('/' , (req,res) => {
+  console.log("I am get '/' route");
+  
   res.send("Server is up and running");
 })
 
